@@ -26,7 +26,7 @@ fn main() {
     );
 
     loop {
-        if let Err(err) = rewriter.write(&buf) {
+        if let Err(err) = rewriter.write(&buf[..size]) {
             println!("error: {:?}", err);
         }
         if size < buf.len() {
